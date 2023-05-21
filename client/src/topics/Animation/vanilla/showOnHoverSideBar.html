@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="animation.css" />
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .flex {
+        display: inline-flex;
+        margin-left: -240px;
+        transition: margin 0.6s ease-in;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+      }
+
+      .para {
+        max-width: 200px;
+        border-right: 1px solid black;
+        padding-right: 10px;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 50px;
+      }
+
+      .flex:hover {
+        margin-left: 0px;
+      }
+
+      .ml-0 {
+        margin-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div class="para">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
+          ipsum laboriosam. Sunt ad, tenetur quasi corporis ratione ipsam porro
+          non necessitatibus corrupti, quo quam. Culpa voluptates rem voluptatem
+          pariatur vel!
+        </p>
+      </div>
+      <div class="icon">
+        <button onclick="toggleSideView()">
+          <i class="fa fa-caret-right fa-xs"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      function toggleSideView() {
+        const flexElem = document.querySelector(".flex");
+        flexElem.classList.toggle("ml-0");
+      }
+    </script>
+  </body>
+</html>

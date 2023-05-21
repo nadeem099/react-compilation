@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Animation</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 101vh;
+        /* background: linear-gradient(to top, rgba(2,0,36,1) 0%, rgba(240,147,7,1) 100%); */
+        background-image: url('cityBg.jpg'), linear-gradient(to top, rgb(0, 0, 0) 30%, rgb(255, 255, 255) 60%);
+        /* background-size: cover; */
+        animation: bgAnimation 3s linear infinite;
+      }
+      @keyframes bgAnimation {
+        0% {
+          /* transform: translateX(-100%); */
+          background-position: 100%;
+        }
+        100% {
+          /* transform: translateX(100%); */
+          background-position: 0;
+        }
+      }
+
+      .container {
+        position: relative;
+        height: 100%;
+      }
+      /* img {
+        object-fit: cover;
+        width: 5000px;
+        height: 101vh;
+        background-position: 0px;
+      } */
+
+      .car {
+        position: absolute;
+        bottom: 28%;
+        width: fit-content;
+        height: fit-content;
+        animation: carMove 5s linear infinite;
+      }
+
+      .car > img {
+        width: 200px;
+        height: auto;
+      }
+      .car span {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        border-radius: 50%;
+        box-shadow: 1px 2px 3px;
+      }
+      .car span > span {
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        width: 20px;
+        height: 20px;
+        border: 1px dashed white;
+        animation: wheels 2s infinite linear;
+      }
+
+      .car > span:nth-child(1) {
+        bottom: 80px;
+        left: 25px;
+      }
+
+      .car > span:nth-child(2) {
+        bottom: 80px;
+        right: 20px;
+      }
+
+      @keyframes wheels {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes carMove {
+        0% {
+          transform: translateX(900%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="img-container">
+        <img src="cityBg.jpg" alt="cityBg" />
+      </div> -->
+      <div class="car">
+        <span><span></span></span>
+        <span><span></span></span>
+        <img src="car.png" alt="car image" />
+      </div>
+    </div>
+  </body>
+</html>
