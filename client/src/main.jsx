@@ -14,6 +14,10 @@ import Pagination from "./topics/pagination/Pagination";
 import TypeSafeFunctional from "./topics/TypeSafety/TypeSafeFunctional";
 import { TweetsWithRedux, TweetsWithRTK } from "./topics/redux-toolkit";
 import store from "./topics/redux-toolkit/rtk/store";
+import BaseButton from "./topics/styled-component/BaseButton";
+import { PrimaryButton } from "./topics/styled-component/PrimaryButton";
+import { StyledBaseButton } from "./topics/styled-component/DummyButton";
+import { IconPrimayButton } from "./topics/styled-component/IconPrimaryButton";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
@@ -35,6 +39,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Provider store={store}>
               <TweetsWithRTK />
             </Provider>
+          }
+        />
+        <Route
+          path="styling"
+          element={
+            <>
+              <BaseButton>BaseButton</BaseButton>
+              <PrimaryButton variant="primary" xl>
+                Primary Button
+              </PrimaryButton>
+              <IconPrimayButton icon="location">
+                Icon Primary Button
+              </IconPrimayButton>
+              <StyledBaseButton>Dummy Button</StyledBaseButton>
+            </>
           }
         />
       </Routes>
